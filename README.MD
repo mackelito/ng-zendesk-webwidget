@@ -2,6 +2,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/933c908a637cbd67013b/maintainability)](https://codeclimate.com/github/mackelito/ng-zendesk-webwidget/maintainability)
 [![Build Status](https://travis-ci.org/mackelito/ng-zendesk-webwidget.svg?branch=master)](https://travis-ci.org/mackelito/ng-zendesk-webwidget)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/mackelito/ng-zendesk-webwidget/issues)
+[![codebeat badge](https://codebeat.co/badges/f912ceb9-f9e3-4ff4-9672-962d82c3a8be)](https://codebeat.co/projects/github-com-mackelito-ng-zendesk-webwidget-master)
 
 # ng-zendesk-webwidget
 
