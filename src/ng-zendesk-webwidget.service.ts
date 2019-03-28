@@ -15,7 +15,7 @@ interface VisibilityQueueItem {
 @Injectable()
 export class ZendeskWebwidgetService {
 
-  private window
+  private window;
 
   constructor(_ZendeskWebwidgetConfig?: ZendeskWebwidgetConfig) {
     if (!_ZendeskWebwidgetConfig.accountUrl) {
@@ -30,15 +30,15 @@ export class ZendeskWebwidgetService {
     // https://support.zendesk.com/hc/en-us/articles/203908456-Using-Web-Widget-to-embed-customer-service-in-your-website
 
     window.zEmbed || function(e, t) {
-      var n, o, d, i, s, a = [],
-      r = document.createElement("iframe");
+      let n, o, d, i, s, a = [],
+      r = document.createElement('iframe');
       window.zEmbed = function() {
         a.push(arguments)
       }, window.zE = window.zE || window.zEmbed,
-      r.src = "javascript:false",
-      r.title = "",
-      r.style.cssText = "display: none",
-      d = document.getElementsByTagName("script"),
+      r.src = 'javascript:false',
+      r.title ='',
+      r.style.cssText = 'display: none',
+      d = document.getElementsByTagName('script'),
       d = d[d.length - 1],
       d.parentNode.insertBefore(r, d),
       i = r.contentWindow,
@@ -50,10 +50,10 @@ export class ZendeskWebwidgetService {
         o = s
       }
       o.open()._l = function() {
-        var e = this.createElement("script");
+        var e = this.createElement('script');
         n && (this.domain = n),
-        e.id = "js-iframe-async",
-        e.src = "https://assets.zendesk.com/embeddable_framework/main.js",
+        e.id = 'js-iframe-async',
+        e.src = 'https://assets.zendesk.com/embeddable_framework/main.js',
         this.t=+new Date,
         this.zendeskHost = _ZendeskWebwidgetConfig.accountUrl,
         this.zEQueue=a,
