@@ -10,15 +10,16 @@ Zendesk-Webwidget for Angular
 
 ## Installation
 
-Via [npm](https://www.npmjs.com/package/ng-zendesk-webwidget):
-
 ```bash
 $ npm install ng-zendesk-webwidget --save
+```
+```bash
+$ yarn add ng-zendesk-webwidget
 ```
 
 ## Usage
 
-#### 1. Import the `NgZendeskWebwidgetModule`:
+#### In app.module import `ZendeskWebwidgetModule`
 
 ```ts
 import { BrowserModule } from '@angular/platform-browser';
@@ -26,7 +27,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { ngZendeskWebwidgetModule } from 'ng-zendesk-webwidget';
+import { ZendeskWebwidgetModule } from 'ng-zendesk-webwidget';
 
 @NgModule({
   declarations: [
@@ -34,20 +35,20 @@ import { ngZendeskWebwidgetModule } from 'ng-zendesk-webwidget';
   ],
   imports: [
     BrowserModule,
-    ngZendeskWebwidgetModule.forRoot()
+    ZendeskWebwidgetModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 ```
 
-##### SharedModule
+##### Using a SharedModule
 
 ```ts
 @NgModule({
     exports: [
         CommonModule,
-        ngZendeskWebwidgetModule
+        ZendeskWebwidgetModule
     ]
 })
 export class SharedModule { }
@@ -59,7 +60,7 @@ export class SharedModule { }
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {ngZendeskWebwidgetModule, ZendeskWebwidgetConfig} from 'ng-zendesk-webwidget';
+import {ZendeskWebwidgetModule, ZendeskWebwidgetConfig} from 'ng-zendesk-webwidget';
 
 import {AppComponent} from './app';
 
@@ -75,7 +76,7 @@ export class ZendeskConfig extends ZendeskWebwidgetConfig {
     imports: [
         BrowserModule,
         HttpClientModule,
-        ngZendeskWebwidgetModule.forRoot(ZendeskConfig)
+        ZendeskWebwidgetModule.forRoot(ZendeskConfig)
     ],
     bootstrap: [AppComponent]
 })
