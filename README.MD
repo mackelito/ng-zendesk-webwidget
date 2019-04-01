@@ -163,6 +163,9 @@ For more info, see: [ZendeskAPI](https://developer.zendesk.com/embeddables/docs/
 - `accountUrl`: Url of your domain (example.zendesk.com)
 - `beforePageLoad`: Callback, executed after Zendesk loaded
 
+## Deploy
+To deploy new versions use [np](https://github.com/sindresorhus/np)
+
 ## Issues
 
 Please report bugs and issues [here](https://github.com/mackelito/ng-zendesk-webwidget/issues).
