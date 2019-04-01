@@ -1,6 +1,5 @@
 [![Dependency Status](https://dependencyci.com/github/mackelito/ng-zendesk-webwidget/badge)](https://dependencyci.com/github/mackelito/ng-zendesk-webwidget)
 [![Maintainability](https://api.codeclimate.com/v1/badges/933c908a637cbd67013b/maintainability)](https://codeclimate.com/github/mackelito/ng-zendesk-webwidget/maintainability)
-[![Build Status](https://travis-ci.org/mackelito/ng-zendesk-webwidget.svg?branch=master)](https://travis-ci.org/mackelito/ng-zendesk-webwidget)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/mackelito/ng-zendesk-webwidget/issues)
 [![codebeat badge](https://codebeat.co/badges/f912ceb9-f9e3-4ff4-9672-962d82c3a8be)](https://codebeat.co/projects/github-com-mackelito-ng-zendesk-webwidget-master)
 
@@ -8,7 +7,12 @@
 
 Zendesk-Webwidget for Angular
 
-## Installation
+* [Installation guide](#installation)
+* [Usage](#usage)
+* [API](#api)
+
+## [](#installation)Installation
+
 
 ```bash
 $ npm install ng-zendesk-webwidget --save
@@ -17,7 +21,7 @@ $ npm install ng-zendesk-webwidget --save
 $ yarn add ng-zendesk-webwidget
 ```
 
-## Usage
+## [](#usage)Usage
 
 #### In app.module import `ZendeskWebwidgetModule`
 
@@ -104,8 +108,8 @@ export class app {
 ```ts
   constructor(private _ZendeskWebwidgetService: ZendeskWebwidgetService) {
     _ZendeskWebwidgetService.identify({
-     name: 'Alison Vilela',
-     email: 'alison.vilela@live.nl'
+     name: 'John Doe',
+     email: 'John@doe.net'
     })
     _ZendeskWebwidgetService.show()
   }
@@ -115,19 +119,42 @@ export class app {
   }
 }
 ```
-## API
+## [](#api)API
 
 ### ZendeskWebwidgetService
 
 #### Methods:
+<!-- <table class="methods">
+<style>
+table.methods { padding: 0; margin: 0 0 -1px 0; }
+.methods td { min-width: 200px; }
+.methods td:last-child { width: 100%; }
+</style>
+  <tr>
+    <td>`setLocale('en')`</td>
+    <td>Set to change language</td>
+  </tr>
+</table>
+<table class="methods">
+    <tr>
+        <td>`identify(userObj)`</td>
+        <td>If your user is signed in, you can use this methods for to pass the details of that user to your Zendesk</td>
+    </tr>
+</table> -->
 
-- `setLocale(locale)`: Set locale to change language.
-- `identify(userObj)`: If your user is signed in, you can use this methods for to pass the details of that user to your Zendesk.
-- `hide()`: The method completely hides all parts of the Widget from the page.
-- `show()`: The method displays the Widget on the host page in its starting 'button' state.
-- `activate(options)`: The method activates and opens the Widget in its starting state.
-- `setHelpCenterSuggestions(options)`: The method enhances the contextual help provided by the Web Widget.
-- `setSettings(settings)`: The method sets `window.zESettings`.
+`setLocale('en')` Set to change language
+
+`identify(userObj)` If your user is signed in, you can use this methods for to pass the details of that user to your Zendesk
+
+`hide()`: The method completely hides all parts of the Widget from the page.
+
+`show()`: The method displays the Widget on the host page in its starting 'button' state.
+
+`activate(options)`: The method activates and opens the Widget in its starting state.
+
+`setHelpCenterSuggestions(options)`: The method enhances the contextual help provided by the Web Widget.
+
+`setSettings(settings)`: The method sets `window.zESettings`.
 
 For more info, see: [ZendeskAPI](https://developer.zendesk.com/embeddables/docs/widget/api)
 
@@ -142,27 +169,4 @@ Please report bugs and issues [here](https://github.com/mackelito/ng-zendesk-web
 
 ## License
 
-MIT © [Alison Vilela](https://github.com/mackelito)
-
-# Change log
-
-### v0.1.4
-
-- Support Angular 6
-
-### v0.1.3
-
-- Support Angular 5
-
-### v0.1.2
-
-- Added custom settings
-
-### v0.1.1
-
-- Change documentation
-
-### v0.1.0
-
-- Added documentation
-- Initial version
+MIT © [Markus Thiel](https://github.com/mackelito)
