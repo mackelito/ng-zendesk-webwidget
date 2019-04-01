@@ -73,5 +73,5 @@
   "files": [
     "dist"
   ],
-  "main": "ng-zendesk-webwidget.umd.js"
+  "main": "dist/ng-zendesk-webwidget.umd.js"
 }
