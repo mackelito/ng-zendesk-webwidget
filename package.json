@@ -18,11 +18,12 @@
     "url": "https://github.com/mackelito/ng-zendesk-webwidget.git"
   },
   "author": {
-    "name": "Alison Vilela",
-    "email": "alison.vilela@live.nl"
+    "name": "Markus Thiel",
+    "email": "markus@thiels.se"
   },
   "keywords": [
-    "angular"
+    "angular",
+    "zendesk"
   ],
   "license": "MIT",
   "bugs": {
@@ -73,5 +74,8 @@
   "files": [
     "dist"
   ],
-  "main": "dist/ng-zendesk-webwidget.umd.js"
+  "main": "dist/ng-zendesk-webwidget.umd.js",
+  "module": "dist/ng-zendesk-webwidget.js",
+  "jsnext:main": "dist/ng-zendesk-webwidget.js",
+  "typings": "dist/ng-zendesk-webwidget.d.ts"
 }
