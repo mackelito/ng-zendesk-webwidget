@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ZendeskWebwidgetConfig } from './ng-zendesk-webwidget.model';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 
 function getWindow (): any {
@@ -16,6 +17,8 @@ interface VisibilityQueueItem {
 export class ZendeskWebwidgetService {
 
   private window;
+  private loadedStream = new BehaviorSubject(false);
+  loaded$: Observable<boolean> = this.loadedStream.asObservable();
 
   constructor(_ZendeskWebwidgetConfig?: ZendeskWebwidgetConfig) {
     if (!_ZendeskWebwidgetConfig.accountUrl) {
@@ -64,7 +67,8 @@ export class ZendeskWebwidgetService {
     }();
 
     this.window.zE(() => {
-        _ZendeskWebwidgetConfig.beforePageLoad(this.window.zE)
+        _ZendeskWebwidgetConfig.beforePageLoad(this.window.zE);
+        this.loadedStream.next(true);
       }
     )
   }
