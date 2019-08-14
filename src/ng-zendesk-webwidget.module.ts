@@ -6,7 +6,8 @@ import { ZendeskWebwidgetService } from './ng-zendesk-webwidget.service';
 @NgModule({
   imports: [
     CommonModule
-  ]
+  ],
+  exports: []
 })
 export class ZendeskWebwidgetModule {
   static forRoot(zendeskConfig: Type<ZendeskWebwidgetConfig>): ModuleWithProviders {
