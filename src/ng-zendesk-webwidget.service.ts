@@ -18,7 +18,7 @@ export class ZendeskWebwidgetService {
 
   private window;
   private loadedStream = new BehaviorSubject(false);
-  loaded$: Observable<boolean> = this.loadedStream.asObservable();
+  public loaded$: Observable<boolean> = this.loadedStream.asObservable();
 
   constructor(_ZendeskWebwidgetConfig?: ZendeskWebwidgetConfig) {
     if (!_ZendeskWebwidgetConfig.accountUrl) {
