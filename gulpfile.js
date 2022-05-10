@@ -5,7 +5,7 @@ var gulp = require('gulp'),
   rollup = require('gulp-rollup'),
   rename = require('gulp-rename'),
   del = require('del'),
-  runSequence = require('run-sequence'),
+  runSequence = require('gulp4-run-sequence'),
   inlineResources = require('./tools/gulp/inline-resources');
 
 const rootFolder = path.join(__dirname);
@@ -184,7 +184,7 @@ gulp.task('clean:build', function () {
   return deleteFolders([buildFolder]);
 });
 
-gulp.task('compile', function () {
+gulp.task('compile', done => {
   runSequence(
     'clean:dist',
     'copy:source',
@@ -205,6 +205,7 @@ gulp.task('compile', function () {
         console.log('Compilation finished succesfully');
       }
     });
+    done();
 });
 
 /**
@@ -214,11 +215,11 @@ gulp.task('watch', function () {
   gulp.watch(`${srcFolder}/**/*`, ['compile']);
 });
 
-gulp.task('clean', ['clean:dist', 'clean:tmp', 'clean:build']);
+gulp.task('clean', gulp.series('clean:dist', 'clean:tmp', 'clean:build'));
 
-gulp.task('build', ['clean', 'compile']);
-gulp.task('build:watch', ['build', 'watch']);
-gulp.task('default', ['build:watch']);
+gulp.task('build', gulp.series('clean', 'compile'));
+gulp.task('build:watch', gulp.series('build', 'watch'));
+gulp.task('default', gulp.series('build:watch'));
 
 /**
  * Deletes the specified folder
